@@ -1,40 +1,22 @@
-# ex03 - Comandos do Terminal
+# ex03
 
-## Objetivo
-Gerar uma chave pública SSH e salvá-la no arquivo `id_rsa_pub`.
+gerar chave SSH:
 
-## Comandos Utilizados
-
-### 1. Gerar um par de chaves SSH (se necessário)
 ```bash
 ssh-keygen -t rsa -b 4096 -f id_rsa
 ```
-Este comando gera:
-- `id_rsa` - chave privada (mantida secreta)
-- `id_rsa.pub` - chave pública
 
-### 2. Visualizar a chave pública
-```bash
-cat id_rsa.pub
-```
+vai criar:
+- `id_rsa` (privada - nunca compartilha!)
+- `id_rsa.pub` (pública - pode compartilhar)
 
-### 3. Copiar a chave pública para o arquivo solicitado
+copiar a pública pro arquivo solicitado:
 ```bash
 cp id_rsa.pub id_rsa_pub
 ```
 
-### 4. Verificar o conteúdo
+ve se tá lá:
 ```bash
 cat id_rsa_pub
 ```
 
-## Resultado
-A chave pública SSH foi salva no arquivo `id_rsa_pub` com formato:
-```
-ssh-rsa AAAA...
-```
-
-## Notas de Segurança
-- Nunca compartilhe a chave privada (`id_rsa`)
-- A chave pública (`id_rsa_pub`) pode ser compartilhada com servidores SSH
-- As chaves são geradas apenas uma vez durante o setup

@@ -1,59 +1,25 @@
-# ex08 - Comandos do Terminal
+# ex08
 
-## Objetivo
-Criar um script que limpa arquivos temporários usando o comando `find`.
+script que limpa arquivos temporários (terminados em ~ e #...#):
 
-## Comandos Utilizados
-
-### 1. Criar o arquivo clean (script de limpeza)
 ```bash
 echo 'find . -type f \( -name "*~" -o -name "#*#" \) -print -delete' > clean
 ```
 
-### 2. Tornar o script executável
+deixar executável:
 ```bash
 chmod +x clean
 ```
 
-### 3. Testar o script
+testar:
 ```bash
 ./clean
 ```
 
-## Conteúdo do Script
-O arquivo `clean` contém:
-```bash
-find . -type f \( -name "*~" -o -name "#*#" \) -print -delete
-```
+vai procurar e deletar arquivos temporários
 
-## Significado do Comando Find
-- `find .` - busca no diretório atual e subdiretórios
-- `-type f` - encontra apenas arquivos (não diretórios)
-- `-name "*~"` - encontra arquivos terminados em `~` (backups do editor)
-- `-o` - operador OR (ou)
-- `-name "#*#"` - encontra arquivos que começam e terminam com `#` (backups do Emacs)
-- `-print` - exibe os arquivos encontrados
-- `-delete` - deleta os arquivos encontrados
-
-## Resultado
-O script encontra e deleta todos os arquivos temporários:
-- Backups de editor (ex: arquivo.txt~)
-- Backups do Emacs (ex: #arquivo.txt#)
-
-## Precauções
-```bash
-# Teste sem deletar antes (removendo -delete)
-find . -type f \( -name "*~" -o -name "#*#" \) -print
-
-# Ou use -delete com confirmação
-find . -type f \( -name "*~" -o -name "#*#" \) -print -ok rm {} \;
-```
-
-## Alternativas
-```bash
-# Apenas arquivos terminados em ~
-find . -type f -name "*~" -delete
-
-# Com diretórios específicos
-find /tmp -type f -name "*~" -delete
-```
+nota: 
+- `-type f` = apenas arquivos
+- `*~` = backups de editor (arquivo.txt~)
+- `#*#` = backups do Emacs (#arquivo.txt#)
+- `-delete` = deleta os encontrados

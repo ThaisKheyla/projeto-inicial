@@ -1,30 +1,18 @@
-# ex01 - Comandos do Terminal
+# ex01
 
-## Objetivo
-Criar um arquivo com atributos/permissões específicas (testShell00).
+criar arquivo `testShell00` e dar permissão 400 (só leitura)
 
-## Comandos Utilizados
-
-### 1. Criar o arquivo vazio
 ```bash
 touch testShell00
-```
-
-### 2. Ajustar as permissões do arquivo
-```bash
 chmod 400 testShell00
 ```
-O arquivo fica com permissão de leitura apenas para o proprietário.
 
-### 3. Criar o arquivo tar
+empacotar:
 ```bash
 tar -cf testShell00.tar testShell00
 ```
 
-### 4. Verificar as permissões
+ve as permissões:
 ```bash
 ls -l testShell00
 ```
-
-## Resultado
-O arquivo `testShell00` com permissões de leitura apenas (400) foi criado e empacotado em `testShell00.tar`.

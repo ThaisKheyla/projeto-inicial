@@ -1,53 +1,21 @@
-# ex05 - Comandos do Terminal
+# ex05
 
-## Objetivo
-Criar um script Bash `git_commit.sh` que lista os últimos commits do git.
+script que mostra os últimos 5 commits do git:
 
-## Comandos Utilizados
-
-### 1. Criar o arquivo git_commit.sh
 ```bash
 echo 'git log --format="%H" -n 5' > git_commit.sh
 ```
 
-### 2. Tornar o script executável
+deixar executável:
 ```bash
 chmod +x git_commit.sh
 ```
 
-### 3. Testar o script
+testar:
 ```bash
 ./git_commit.sh
 ```
 
-## Conteúdo do Script
-O arquivo `git_commit.sh` contém:
-```bash
-#!/bin/bash
-git log --format="%H" -n 5
-```
+vai exibir os 5 últimos commits com seus hashes (SHA-1)
 
-## Significado do Comando Git
-- `git log` - mostra o histórico de commits
-- `--format="%H"` - exibe apenas o hash completo (SHA-1) dos commits
-- `-n 5` - limita a 5 últimos commits
-
-## Resultado
-O script exibe os 5 últimos commits com seus hashes:
-```
-abc123def456...
-def456ghi789...
-...
-```
-
-## Alternativas
-```bash
-# Mostrar os últimos 10 commits
-git log --format="%H" -n 10
-
-# Mostrar commits com mensagem
-git log --format="%H %s" -n 5
-
-# Mostrar commits em formato oneline
-git log --oneline -n 5
-```
+nota: `%H` = hash completo do commit, `-n 5` = últimos 5

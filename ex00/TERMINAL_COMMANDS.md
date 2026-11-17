@@ -1,19 +1,12 @@
-# ex00 - Comandos do Terminal
+# ex00
 
-## Objetivo
-Exibir um arquivo com caracteres especiais no terminal.
+criar um arquivo `z` com um caractere
 
-## Comandos Utilizados
-
-### 1. Criar o arquivo com conteúdo
 ```bash
 echo "Z" > z
 ```
 
-### 2. Verificar o conteúdo
+
 ```bash
 cat z
 ```
-
-## Resultado
-O arquivo `z` contém o caractere "Z" que é exibido no terminal.
